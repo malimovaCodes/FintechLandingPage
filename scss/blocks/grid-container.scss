@@ -1,0 +1,103 @@
+@use "../variables/variables.scss" as variables;
+@use "../mixins/mixins.scss" as mixins;
+
+.grid-container {
+    display: grid;
+    justify-items: start;
+    justify-content: center;
+    grid-template-columns: repeat(6, 190px);
+    grid-template-rows: repeat(2, 250px);
+
+    &__chart {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        left: 80px;
+    }
+
+    &__paragraph {
+        grid-column: 4 / span 6;
+        justify-self: start;
+        padding: 50px 80px 50px 0;
+    }
+
+    &__block {
+        &--1 {
+            grid-column: 4 / 5;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(6, 180px);
+        grid-template-rows: repeat(2, 220px);
+    }
+}
+
+@media (max-width: 1060px) {
+    .grid-container {
+        grid-template-columns: repeat(6, 150px);
+        grid-template-rows: repeat(2, 190px);
+
+        &__chart {
+            width: 200px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        justify-items: center;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: auto auto auto;
+
+        &__chart {
+            width: 100%;
+            grid-column: 2;
+            grid-row: 1;
+            left: 0;
+        }
+
+        &__paragraph {
+            grid-row: 2;
+            grid-column: 1 / span 3;
+            justify-self: center;
+            padding: 15px;
+            height: 120px;
+        }
+
+        &__block {
+            grid-row: 3;
+            &--1 {
+                grid-column: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .grid-container {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto 150px 150px 150px;
+
+        &__chart {
+            grid-column: 2;
+        }
+
+        &__block {
+            grid-column: 2;
+
+            &--1 {
+                grid-row: 3;
+            }
+
+            &--2 {
+                grid-row: 4;
+            }
+
+            &--3 {
+                grid-row: 5;
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@use "../variables/variables.scss" as variables;
+@use "../mixins/mixins.scss" as mixins;
+
+.info-block {  
+    &__base {
+        width: 160px;
+        height: 115px;
+        padding-top: 20px;
+        position: relative;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        background-color: variables.$accent-block-dark-blue;
+        border: 1.5px solid transparent;
+        border-radius: 25px;
+
+        background-image: linear-gradient(variables.$accent-block-dark-blue, variables.$accent-block-dark-blue), 
+        linear-gradient(to left, variables.$gradient-blue, variables.$gradient-purple);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+
+        &::after {
+            content: var(--block-number); 
+            @include mixins.grid-item-numbers(70px, 100px);
+        }
+    }
+
+    &__icon {
+        padding-bottom: 5px;
+    }
+
+    &__name {
+        letter-spacing: 1px;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .info-block {
+        &__base {
+            width: 130px;
+            border-radius: 20px;
+        }
+
+        &__name {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 1060px) {
+    .info-block {
+        &__base {
+            width: 110px;
+            height: 80px;
+            border-radius: 18px;
+
+            &::after {
+                @include mixins.grid-item-numbers(57px, 70px);
+            }
+        }
+
+        &__icon {
+            height: 40px;
+        }
+
+        &__name {
+            padding-top: 5px;
+            font-size: 11px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .info-block {
+        &__base {
+            width: 110px;
+            height: 80px;
+            border-radius: 18px;
+        }
+    }
+}

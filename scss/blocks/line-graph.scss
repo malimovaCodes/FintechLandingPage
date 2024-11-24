@@ -1,0 +1,155 @@
+@use "../variables/variables.scss" as variables;
+@use "../mixins/mixins.scss" as mixins;
+
+.line-graph {   
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 0 5px 20px;
+    }
+
+    &__card {
+        position: absolute;
+        z-index: 2;
+    }
+    
+    &__name, &__title, &__value, &__subtitle {
+        width: 250px;
+        padding: 3px;
+        color: variables.$text-color-white;
+        z-index: 2;
+        letter-spacing: 0.5px;
+    }
+
+    &__name {
+        font-size: 12px;
+    }
+
+    &__title {
+        font-weight: 700;
+        max-width: 200px;
+        font-size: 18px;
+    }
+
+    &__value {
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    &__subtitle {
+        color: variables.$line-graph-subtitle;
+        font-size: 14px;
+    }
+
+    &--center--mobile {
+        display: none;
+    }
+}
+
+.line-graph-wrapper {
+    @include mixins.shadow-wrapper(0 auto, 30px, 800px, 460px);
+  }
+  
+.line-graph-wrapper::before {
+    @include mixins.gradient-shadow(800px, 460px, 1);
+  }
+
+.section__line-graph--center--mobile  {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    .line-graph {
+
+        &__container {
+            padding: 10px 0 5px 10px;
+        }
+
+        &__card {
+            height: 400px;
+        }
+        
+        &__name, &__title, &__value, &__subtitle {
+            width: 230px;
+            padding: 3px;
+        }
+    
+        &__name {
+            font-size: 7px;
+        }
+    
+        &__title {
+            font-size: 12px;
+        }
+    
+        &__value {
+            font-size: 16px;
+        }
+    
+        &__subtitle {
+            font-size: 8px;
+        }
+
+        &__card {
+            display: none;
+        }
+
+        &-wrapper {
+            @include mixins.shadow-wrapper(0 auto, 30px, 370px, 400px);
+            z-index: 1;
+
+            &::before {
+                @include mixins.gradient-shadow(380px, 400px, 1);
+            }
+        }
+
+        &--center--mobile {
+            display: block;
+        position: absolute;
+        z-index: 2;
+        }
+    }
+}
+
+@media (max-width: 394px) {
+    .line-graph {
+
+        &__container {
+            padding: 10px 0 5px 10px;
+        }
+
+        &__card {
+            height: 330px;
+        }
+        
+        &__name, &__title, &__value, &__subtitle {
+            width: 180px;
+            padding: 1px;
+        }
+    
+        &__name {
+            font-size: 7px;
+        }
+    
+        &__title {
+            font-size: 11px;
+        }
+    
+        &__value {
+            font-size: 15px;
+        }
+    
+        &__subtitle {
+            font-size: 8px;
+        }
+
+        &-wrapper {
+            @include mixins.shadow-wrapper(0 auto, 30px, 314px, 330px);
+
+            &::before {
+                @include mixins.gradient-shadow(315px, 330px, 1);
+            }
+        }
+    }
+}

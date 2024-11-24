@@ -1,0 +1,20 @@
+.logo {
+    display: flex;
+    align-items: center;
+
+    &__text {
+        font-size: clamp(14px, 0.93vw, 18px);
+
+        &-container {
+            padding-left: 10px;
+        }
+        
+        &--bold {
+            font-weight: 700;
+        }
+    }
+
+    &__img {
+        width: clamp(30px, 1.91vw, 33px);
+    }
+}

@@ -1,0 +1,107 @@
+@use "../variables/variables.scss" as variables;
+
+.footer {
+    height: auto;
+    width: 100%;
+    background-color: variables.$background-color-blue;
+    position: relative;
+
+    .create-line {
+        margin: 0 auto;
+        width: clamp(150px, 52.1vw, 900px);
+        height: 1px;
+        border-bottom: 1px solid variables.$footer-text-gray;
+    }
+
+    &__copyright {
+        color: variables.$footer-text-gray;
+        font-size: 9px;
+        display: table;
+        margin: 0 auto;
+        padding: 15px 0 15px 0;
+    }
+
+    &__logo {
+        color: variables.$footer-logo-blue;
+        position: absolute;
+        top: 50px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        padding: 100px 0 50px;
+        gap: 1vw;
+    }
+
+    &__title {
+        color: variables.$footer-text-gray;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 7px 0 7px;
+    }
+
+    &__link {
+        color: variables.$text-color-white;
+            width: clamp(100px, 8.1vw, 140px);
+            font-size: 12px;
+            line-height: 30px;
+            text-wrap: nowrap;
+    }
+
+    &__list {
+        list-style-type:  none;
+    }
+
+    &__section:last-of-type {
+
+        .footer__link:last-child {
+            width: 280px;
+            line-height: normal;
+            padding-top: 10px;
+            text-wrap: wrap;
+        }
+    }
+}
+
+@media (max-width: 730px) { 
+    .footer {
+        height: auto;
+
+        &__section {
+            width: 150px; 
+        }
+
+        &__list:last-of-type {
+            .footer__link:last-child {
+                max-width: 180px;
+            }
+        }
+        
+        &__container {
+            width: 190px;
+            margin: 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 394px) {
+    .footer {
+        height: auto;
+
+        &__logo {
+            left: 125px;
+        }
+
+        &__container {
+            width: 190px;
+            margin: 0 auto;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+}

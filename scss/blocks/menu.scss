@@ -1,0 +1,66 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: clamp(60px, 4.63vw, 80px);
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+
+    &__logo {
+        padding: 20px 0;
+    }
+
+    &__burger {
+        background: none;
+        border: none;
+        width: 40px;
+        height: 80%;
+    }
+
+    &__burger:hover {
+        cursor: pointer;
+    }
+
+    &__img {
+        width: 50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .menu {
+      max-width: 950px;
+    }
+}
+
+@media (max-width: 1080px) {
+    .menu {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 960px) {
+    .menu {
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 440px) {
+    .menu {
+        max-width: 300px;
+    }
+  }
+
+@media (max-width: 394px) {
+    .menu {
+        &__logo {
+            padding: 20px 0;
+        }
+    }
+}

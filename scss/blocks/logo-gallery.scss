@@ -1,0 +1,24 @@
+.logo-gallery {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 220px);
+    justify-content: center;
+    justify-items: center;
+
+    &__logo {
+        padding: 15px 30px;
+        height: 40px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 960px) {
+    .logo-gallery {
+        grid-template-rows: 2fr;
+        grid-template-columns: repeat(2, 1fr);
+
+        &__logo {
+            padding: 10px;
+        }
+    }
+}

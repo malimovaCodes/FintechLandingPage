@@ -1,0 +1,64 @@
+@use "../variables/variables.scss" as variables;
+
+@mixin gradient-shadow ($width, $height, $z-index) {
+    content: "";
+    position:  absolute;
+    width: $width;
+    height: $height;
+    background: linear-gradient(variables.$gradient-blue, variables.$gradient-purple);
+    filter: blur(25px);
+    z-index: $z-index;
+}
+
+@mixin shadow-wrapper ($margin, $padding, $width, $height) {
+    margin: $margin;
+    padding: $padding;
+    width: $width;
+    height: $height;
+    position: relative;
+}
+
+@mixin grid-item-numbers ($font-size, $top) {
+    font-size: $font-size;
+    font-weight: 500;
+    position: absolute;
+    top: $top;
+    background: -webkit-linear-gradient(180deg, variables.$gradient-blue, variables.$gradient-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin accent-block ($width, $height, $line-height, $border-radius, $padding) {
+    width: $width;
+    height: $height;
+    line-height: $line-height;
+    background-color: variables.$accent-block-dark-blue;
+    border: 2px solid transparent;
+    border-radius: $border-radius;
+    padding: $padding;
+
+    background-image: linear-gradient(variables.$accent-block-dark-blue, variables.$accent-block-dark-blue), 
+    linear-gradient(to left, variables.$gradient-blue, variables.$gradient-purple);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+@mixin button-gradient ($width, $height, $margin) {
+    border: 3px solid;
+    border-image: linear-gradient(to left, variables.$gradient-blue, variables.$gradient-purple) 1;
+    background-color: transparent;
+    width: $width;
+    height: $height;
+    color: variables.$text-color-white;
+    font-weight: 600;
+    margin: $margin;
+}
+
+@mixin gradient-dot ($width, $height, $blur) {
+    width: $width;
+    height: $height;
+    background: linear-gradient(to bottom, variables.$gradient-blue, variables.$gradient-purple);
+    border-radius: 50%;
+    filter: blur($blur);
+    position: absolute;
+}

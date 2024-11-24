@@ -1,0 +1,62 @@
+@use "../mixins/mixins.scss" as mixins;
+
+.gradient-dot {
+    &--head {
+        &-top {
+            @include mixins.gradient-dot(15.05vw, 15.05vw, 150px);
+            top: -70px;
+            right: -50px;
+        }
+        
+        &-bottom {
+            @include mixins.gradient-dot(15.05vw, 15.05vw, 120px);
+            bottom: -50px;
+            left: -50px;
+        }
+    }
+
+    &--delivering {
+        @include mixins.gradient-dot(37.62vw, 37.62vw, 250px);
+        top: -190px;
+        right: -190px;
+    }
+
+    &--case {
+        &-subsection {
+            @include mixins.gradient-dot(28.94vw, 28.94vw, 250px);
+            bottom: -50px;
+            left: -100px;
+        }
+
+        &-bottom {
+            @include mixins.gradient-dot(34.72vw, 34.72vw, 300px);
+            bottom: -300px;
+            right: -80px;
+        }
+    }
+
+    &--coruma {
+        &-top {
+            @include mixins.gradient-dot(34.72vw, 34.72vw, 250px);
+            top: -180px;
+            right: -100px;
+        }
+
+        &-bottom {
+            @include mixins.gradient-dot(46.3vw, 46.3vw, 20vw);
+        bottom: -180px;
+        left: -100px;
+        }
+    }
+}
+
+.gradient-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: inherit;
+}
